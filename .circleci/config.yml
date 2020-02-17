@@ -29,13 +29,13 @@ commands:
             npm test
 jobs:
   test:
-    working_directory: ~/project/folder1
+    working_directory: ~/folder1
     executor: nodejs
     steps:
       - checkout
       - sum
   test2:
-    working_directory: ~/project/folder2
+    working_directory: ~/folder2
     executor: nodejs
     steps:
       - checkout
