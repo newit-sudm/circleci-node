@@ -4,6 +4,10 @@
 #
   
 version: 2.1
+
+orbs:
+  codecov: circleci/codecov-clojure@0.0.4
+  
 executors:
   nodejs:
     docker:
