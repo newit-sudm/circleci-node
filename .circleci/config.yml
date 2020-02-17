@@ -40,3 +40,8 @@ jobs:
       - checkout
       - sum
       - minus
+
+workflows:
+  main:
+    jobs:
+      - test
