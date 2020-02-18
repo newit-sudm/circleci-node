@@ -29,7 +29,7 @@ commands:
             npm test
 jobs:
   test:
-    working_directory: ~/sum
+    working_directory: ~/project/sum
     executor: nodejs
     steps:
       - checkout
