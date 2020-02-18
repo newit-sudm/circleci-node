@@ -13,30 +13,29 @@ executors:
     docker:
       - image: circleci/node:12.16.0
 commands:
-  sum:
-    working_directory: ~/circleci-node
+  sum: 
     steps:
       - run:
           name: Run folder 1
           command: |
             npm install
             npm test
-  minus:
-    working_directory: ~/circleci-node
+  minus: 
     steps:
       - run:
           name: Run folder 2
-          destination: folder2
           command: |
             npm install
             npm test
 jobs:
   test:
+    working_directory: ~/project/circleci-node/sum
     executor: nodejs
     steps:
       - checkout
       - sum
   test2:
+    working_directory: ~/project/circleci-node/minus
     executor: nodejs
     steps:
       - checkout
