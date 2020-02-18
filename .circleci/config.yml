@@ -14,6 +14,7 @@ executors:
       - image: circleci/node:12.16.0
 commands:
   sum:
+    working_directory: ~/circleci-node
     steps:
       - run:
           name: Run folder 1
@@ -21,9 +22,11 @@ commands:
             npm install
             npm test
   minus:
+    working_directory: ~/circleci-node
     steps:
       - run:
           name: Run folder 2
+          destination: folder2
           command: |
             npm install
             npm test
@@ -32,14 +35,14 @@ jobs:
     executor: nodejs
     steps:
       - checkout
-      - sum:
-          destination: folder1
+          path: ~/circleci-node
+      - sum
   test2:
     executor: nodejs
     steps:
       - checkout
-      - minus:
-          destination: folder2
+          path: ~/circleci-node
+      - minus
 workflows:
   main:
     jobs:
