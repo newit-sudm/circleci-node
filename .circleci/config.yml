@@ -34,14 +34,12 @@ jobs:
   test:
     executor: nodejs
     steps:
-      - checkout:
-          path: ~/circleci-node
+      - checkout
       - sum
   test2:
     executor: nodejs
     steps:
-      - checkout:
-          path: ~/circleci-node
+      - checkout
       - minus
 workflows:
   main:
