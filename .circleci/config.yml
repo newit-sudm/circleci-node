@@ -20,6 +20,9 @@ commands:
           command: |
             npm install
             npm test
+      - store_artifacts:
+          path: ./folder1
+          destination: folder1
   minus: 
     steps:
       - run:
@@ -27,6 +30,9 @@ commands:
           command: |
             npm install
             npm test
+      - store_artifacts:
+          path: ./folder2
+          destination: folder2
 jobs:
   test:
     working_directory: ~/project/sum
