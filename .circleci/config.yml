@@ -17,35 +17,29 @@ commands:
     steps:
       - run:
           name: Run folder 1
-          destination: folder1
           command: |
             npm install
             npm test
-      - store_artifacts:
-          path: ./folder1
-          destination: folder1
   minus:
     steps:
       - run:
           name: Run folder 2
-          destination: folder2
           command: |
             npm install
             npm test
-      - store_artifacts:
-          path: ./folder2
-          destination: folder2
 jobs:
   test:
     executor: nodejs
     steps:
       - checkout
-      - sum
+      - sum:
+          destination: folder1
   test2:
     executor: nodejs
     steps:
       - checkout
-      - minus
+      - minus:
+          destination: folder2
 workflows:
   main:
     jobs:
