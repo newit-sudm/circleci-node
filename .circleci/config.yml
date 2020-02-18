@@ -13,7 +13,10 @@ executors:
     docker:
       - image: circleci/node:12.16.0
 commands:
-  sum: 
+  sum:
+    parameters:
+      destination: folder1
+      type: string
     steps:
       - run:
           name: Run folder 1
@@ -23,7 +26,10 @@ commands:
       - store_artifacts:
           path: ./folder1
           destination: folder1
-  minus: 
+  minus:
+    parameters:
+      destination: folder1
+      type: string
     steps:
       - run:
           name: Run folder 2
