@@ -32,15 +32,13 @@ jobs:
     working_directory: ~/circleci-node/sum
     executor: nodejs
     steps:
-      - checkout:
-          path: ~/circleci-node
+      - checkout
       - sum
   test2:
     working_directory: ~/circleci-node/minus
     executor: nodejs
     steps:
-      - checkout:
-          path: ~/circleci-node
+      - checkout
       - minus
 workflows:
   main:
