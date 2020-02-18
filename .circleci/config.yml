@@ -35,13 +35,11 @@ commands:
           destination: folder2
 jobs:
   test:
-    working_directory: ~/project/sum
     executor: nodejs
     steps:
       - checkout
       - sum
   test2:
-    working_directory: ~/minus
     executor: nodejs
     steps:
       - checkout
